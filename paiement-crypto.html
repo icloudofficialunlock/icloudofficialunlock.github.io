@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Official iCloud Unlock</title>
+  <title>Paiement en crypto-monnaie - Official iCloud Unlock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Official iCloud Unlock</h1>
+  </header>
+  <section class="etapes">
+    <h2>Étapes à suivre</h2>
+    <ol>
+      <li> - Effectuez le paiement en crypto via le reseau Tron (TRC20) sur votre site ou App.</li>
+      <p style="color: #1d8e1d"><strong> ♻️ Vous pouvez compléter le paiement si vous avez envoyé le montant incorrect.</strong></p>
+      <li> - Recevez le code de déblocage par email ou par WhatsApp.</li>
+      <li> - Retournez à la page de déblocage et sélectionnez "debloquer mon iphone".</li>
+      <li> - Entrez le code reçu et débloquez votre iPhone.</li>
+      </ol>
+<p style="color: #cc1313"> ⚠️ Contactez nous si l'adresse de paiement ne fonctionne pas ou pour tout autres moyens de paiement:</p>
+<li><a href="https://wa.me/16265874699" target="_blank">WhatsApp: +1(626)587-4699</a></li>
+<li><a href="mailto:cameronwalter77@gmail.com">E-mail: cameronwalter77@gmail.com</a></li>
+  </section>
+  <h1>Paiement en crypto-monnaie</h1>
+  <p>Veuillez envoyer le montant en USDT de votre commande à l'adresse suivante :</p>
+  <img src="img/USDT depisit.jpg" alt="deposit address using TRON (TRC20) Network" width="400" height="300">
+  <p><strong><span id="address">TTAqQQyeAHhJaAzknM3buR1Q5WUnQLmHx2</span></strong></p>
+  <button id="copy-button">copier l'addresse</address></button>
+  <p style="color: #cc1313"> ⚠️ En cas de problème ou pour confirmer votre commande, veuillez nous contacter par email ou par WhatsApp à l'adresse suivante:</p>
+  <li><a href="https://wa.me/16265874699" target="_blank">WhatsApp: +1(626)587-4699</a></li>
+  <li><a href="mailto:cameronwalter77@gmail.com">E-mail: cameronwalter77@gmail.com</a></li>
+  <p>Merci pour votre commande 🙏🏽!!!</p>
+  <footer>
+    <p>&copy; 2024 Official iCloud Unlock</p>
+    <a href="mentions-legales.html">Mentions légales</a>
+  </footer>
+
+<script> const copyButton = document.getElementById("copy-button");
+  copyButton.addEventListener("click", () => {
+    const address = document.getElementById("address").textContent;
+    navigator.clipboard.writeText(address);
+  
+    alert("L'adresse de la crypto-monnaie a été copiée dans le presse-papier.");
+  
+    // Afficher un message de confirmation
+    const confirmationMessage = document.getElementById("confirmation-message");
+    confirmationMessage.style.display = "block";
+  
+    setTimeout(() => {
+      confirmationMessage.style.display = "none";
+    }, 3000);
+  });  
+</script> 
+</body>
+</html>
