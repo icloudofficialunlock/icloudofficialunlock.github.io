@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Débloquez votre iPhone iCloud</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+  <a href="index.html"><img src="logo.png" alt="Official iCloud Unlock"></a>
+  <h1>Débloquez votre iPhone iCloud en toute simplicité</h1>
+ </header>
+ <main>
+    <h2>Enregistrement des informations</h2>
+    <form action="/action_page.php" method="post">
+        <label for="imei">Numéro IMEI:</label>
+        <input type="text" id="imei" name="imei" maxlength="15" required>
+        <br>
+        <label for="email">Adresse mail:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="tel">No.WhatsApp</label>
+        <input type="tel" id="tel" name="tel" required>
+        <br>
+        <input type="submit" value="Enregistrer">
+    </form>
+    <section>
+        <h2 style="color: rgb(25, 213, 41)">Option de paiement</h2>
+        <ul>
+            <li><a href="paiementwise&paypal.html">Paiement sécurisé</a></li>
+            <li><a href="paiement-crypto.html">Paiement en crypto-monnaie</a></li>
+          </ul>
+    </section>
+  <section class="etapes">
+   <h2>Débloquer mon iPhone</h2>
+    <p>Entrez le code reçu après le paiement par email ou par WhatsApp.</p>
+    <p style="color: darkred">⚠️: During the unlocking please have the phone connected to internet by WIFI 🛜 or cellular data📶</p>
+    <form action="#">
+        <input type="text" name="code" id="code" placeholder="Ex: W3ep5cVmQ2pK">
+        <button type="submit" onclick="return verifierCode()">Débloquer mon iPhone</button>
+    </form>
+    <p id="message-erreur" style="display: none; color: rgb(215, 17, 47);">Code incorrect. Veuillez vérifier et réessayer .</p>
+  </section>
+  <section class="avantages">
+   <h2>Pourquoi choisir Official iCloud Unlock ?</h2>
+   <ul>
+    <li>Service rapide et sécurisé</li>
+    <li>Garantie de satisfaction</li>
+    <li>Support client 24/7</li>
+    <li>Prix abordables</li>
+   </ul>
+  </section>
+  <section class="contact">
+   <h2>Contactez-nous</h2>
+   <p>Pour plus d'informations ou pour passer une commande, veuillez nous contacter via:</p>
+   <ul>
+    <li><a href="https://wa.me/16265874699" target="_blank">WhatsApp: +1(626)587-4699</a></li>
+    <li><a href="mailto:cameronwalter77@gmail.com">Email: cameronwalter77@gmail.com</a></li>
+    <li><a href="https://t.me/official24bypassiphone" target="_blank">Telegram: https://t.me/official24bypassiphone</a></li>
+   </ul>
+  </section>
+ </main>
+ <footer>
+  <p>&copy; 2024 Official iCloud Unlock</p>
+  <a href="mentions-legales.html">Mentions légales</a>
+ </footer>
+<script>
+    function verifierCode() {
+        // Récupérer le code saisi par l'utilisateur
+        var codeSaisi = document.getElementById("code").value;
+    
+        // Vérifier si le code est correct 
+        if (codeSaisi !== "X2acQzmpYDeV") {
+            // Afficher le message d'erreur
+            document.getElementById("message-erreur").style.display = "block";
+            return false;
+        } else {
+            // Le code est correct, on peut débloquer l'iPhone
+            alert("Votre iPhone est débloqué 🥳!");
+            return true;
+        }
+    }
+    </script>
+    <script> 
+    const form = document.querySelector('form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Empêche le rechargement de la page
+
+  // Affiche un message de confirmation
+  alert("Vos informations ont bien été enregistrées. Veuillez effectuer un paiement pour debloquer votre iphone.");
+
+  // Redirige vers la page de paiement (optionnel)
+  // window.location.href = "https://www.exemple.com/paiement";
+});
+      </script> 
+</body>
+</html>
