@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Official iCloud Unlock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Official iCloud Unlock</h1>
+  </header>
+  <main>
+    <section class="intro">
+      <h1 style="color: blue">Débloquez votre iPhone en 15 minutes chrono.</h1>
+      <p>Official iCloud Unlock est un service simple et sécurisé pour débloquer votre iPhone verrouillé iCloud.</p>
+    </section>
+    <section class="steps">
+      <h3>Étapes à suivre:</h3>
+      <ol>
+        <li>Entrez votre numéro IMEI</li>
+        <li>Sélectionnez le modèle de votre iPhone.</li>
+        <li>Choisissez votre option de paiement</li>
+        <ul>
+          <li><a href="paiementwise&paypal.html">Paiement sécurisé</a></li>
+          <li><a href="paiement-crypto.html">Paiement en crypto-monnaie</a></li>
+        </ul>
+        <li>Recevez les instructions de déblocage par email ou WhatsApp</li>
+      </ol>
+    </section>
+    <section class="form">
+      <form action="#">
+        <label for="imei">Numéro IMEI:</label>
+        <input type="text" id="imei" name="imei" placeholder="Entrez votre numéro IMEI">
+        <label for="model">Modèle d'iPhone:</label>
+        <select id="model" name="model">
+          <option value="">Choisissez votre modèle</option>
+          <option value="iphone-15-Pro-Max">iPhone 15 Pro Max</option>
+          <option value="iphone-15-Pro">iPhone 15 Pro</option>
+          <option value="iphone-15">iPhone 15</option>
+          <option value="iphone-14-PRO-Max">iPhone 14 PRO Max</option>
+          <option value="iphone-14-PRO">iPhone 14 PRO</option>
+          <option value="iphone-14">iPhone 14</option>
+          <option value="iphone-13-PRO-Max">iPhone 13 Pro Max</option>
+          <option value="iphone-13-PRO">iPhone 13 PRO</option>
+          <option value="iphone-13-mini">iPhone 13 mini</option>
+          <option value="iphone-13">iPhone 13</option>
+          <option value="iphone-12-PRO-MAX">iPhone 12 PRO MAX</option>
+          <option value="iphone-12-PRO">iPhone 12 PRO</option>
+          <option value="iphone-12-mini">iPhone 12 mini</option>
+          <option value="iphone-12">iPhone 12</option>
+          <option value="iphone-11-PRO-MAX">iPhone 11 PRO MAX</option>
+          <option value="iphone-11-PRO">iPhone 11 PRO</option>
+          <option value="iphone-11">iPhone 11</option>
+          <option value="iphone-xr">iPhone XR</option>
+          <option value="iphone-xs">iPhone XS</option>
+          <option value="iphone-SE">iphone SE (All)</option>
+          <option value="older-devices">iphone 5 to X</option>
+        </select>
+        <p style="color: rgb(33, 159, 17)"id="prix"><strong>prix</strong> : </p>
+        <button type="submit"><a href="debloquer.html?imei=${imei}&modele=${model}" class="bouton-blanc">Débloquer maintenant</a></button>
+        <p style="color: darkred">⚠️: During the unlocking please have the phone connected to internet by WIFI 🛜 or cellular data📶</p>
+      </form>
+    </section>
+    <section>
+      <h2>Débloquez votre iPhone en toute simplicité</h2>
+      <p>Official iCloud Unlock est un service simple et rapide pour débloquer votre iPhone verrouillé iCloud.</p>
+      <p>Notre équipe d'experts est à votre disposition pour vous aider à retrouver l'accès à votre appareil.</p>
+    </section>
+    <section>
+      <h2>Pourquoi choisir Official iCloud Unlock ?</h2>
+      <ul>
+        <li>Service rapide et sécurisé</li>
+        <li>Garantie de satisfaction</li>
+        <li>Support client 24/7</li>
+        <li>Prix abordables</li>
+      </ul>
+    </section>
+    <section class="contact">
+      <h2>Contactez-nous</h2>
+      <p>Pour plus d'informations ou pour passer une commande, veuillez nous contacter via:</p>
+      <ul>
+        <li><a href="https://wa.me/16265874699" target="_blank">WhatsApp: +1(626)587-4699</a></li>
+        <li><a href="mailto:cameronwalter77@gmail.com">E-mail: cameronwalter77@gmail.com</a></li>
+        <li><a href="https://t.me/official24bypassiphone" target="_blank">Telegram: https://t.me/official24bypassiphone</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Official iCloud Unlock</p>
+    <a href="mentions-legales.html">Mentions légales</a>
+  </footer>
+  <script>
+    const prixModeles = {
+      "iphone-15-Pro-Max": 180,
+      "iphone-15-Pro": 160,
+      "iphone-15": 150,
+      "iphone-14-PRO-Max": 140,
+      "iphone-14-PRO": 130,
+      "iphone-14": 120,
+      "iphone-13-PRO-Max": 120,
+      "iphone-13-PRO": 100,
+      "iphone-13-mini": 75,
+      "iphone-13": 80,
+      "iphone-12-PRO-MAX": 80,
+      "iphone-12-PRO": 70,
+      "iphone-12-mini": 60,
+      "iphone-12": 65,
+      "iphone-11-PRO-MAX": 65,
+      "iphone-11-PRO": 60,
+      "iphone-11": 60,
+      "iphone-xr": 50,
+      "iphone-xs": 40,
+      "iphone-SE": 30,
+      "older-devices": 20,
+    };
+  </script>
+  <script>
+    const modeleSelect = document.getElementById("model");
+    const prixElement = document.getElementById("prix");
+
+    modeleSelect.addEventListener("change", () => {
+      const model = modeleSelect.value;
+      const prix = prixModeles[model];
+
+      // Afficher le prix
+      prixElement.textContent = `Prix : ${prix}$`;
+    });
+  </script>
+</body>
+</html>
