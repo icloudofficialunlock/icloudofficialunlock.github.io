@@ -4,7 +4,30 @@
   <meta charset="UTF-8">
   <title>Official iCloud Unlock</title>
   <link rel="stylesheet" href="style.css">
-</head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 200px;
+      margin: 0 auto;
+    }
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image {
+      width: 100px;
+      height: auto;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .image.active {
+      opacity: 1;
+    }
+  </style></head>
 <body>
   <header>
     <h1>Official iCloud Unlock</h1>
@@ -14,7 +37,23 @@
       <h1 style="color: blue">Débloquez votre iPhone en 15 minutes chrono.</h1>
       <p>Official iCloud Unlock est un service simple et sécurisé pour débloquer votre iPhone verrouillé iCloud.</p>
     </section>
-    <section class="steps">
+    <div class="container">
+    <h2>Affichage aléatoire d'images</h2>
+    <div class="image-container">
+        <img class="image" src="unlock/IMG_9591.jpg" alt="Image 1" width="10" height="5">
+        <img class="image" src="unlock/IMG_9592.jpg" alt="Image 2" width="10" height="5">
+        <img class="image" src="unlock/IMG_9593.jpg" alt="Image 3" width="10" height="5">
+        <img class="image" src="unlock/IMG_9594.jpg" alt="Image 4" width="10" height="5">
+        <img class="image" src="unlock/IMG_9596.jpg" alt="Image 5" width="10" height="5">
+        <img class="image" src="unlock/IMG_9601.jpg" alt="Image 6" width="10" height="5">
+        <img class="image" src="unlock/IMG_9602.jpg" alt="Image 7" width="10" height="5">
+        <img class="image" src="unlock/IMG_9598.jpg" alt="Image 8" width="10" height="5">
+        <img class="image" src="unlock/IMG_9599.jpg" alt="Image 9" width="10" height="5">
+        <img class="image" src="unlock/IMG_9600.jpg" alt="Image 10" width="10" height="5">
+        <img class="image" src="unlock/IMG_9603.jpg" alt="Image 11" width="10" height="5">
+        <img class="image" src="unlock/IMG_9604.jpg" alt="Image 12" width="10" height="5">
+      </div>
+  </div>    <section class="steps">
       <h3>Étapes à suivre:</h3>
       <ol>
         <li>1- Entrez votre numéro IMEI</li>
@@ -89,7 +128,25 @@
     <p>&copy; 2024 Official iCloud Unlock</p>
     <a href="mentions-legales.html">Mentions légales</a>
   </footer>
-  <script>
+   <script>
+    const images = document.querySelectorAll(".image");
+    let currentIndex = -1;
+
+    function showImage() {
+      if (currentIndex !== -1) {
+        images[currentIndex].classList.remove("active");
+      }
+
+      const randomIndex = Math.floor(Math.random() * images.length);
+      currentIndex = randomIndex;
+
+      images[currentIndex].classList.add("active");
+
+      setTimeout(showImage, 2000); // Défilement toutes les 2 secondes
+    }
+
+    showImage();
+  </script>  <script>
     const prixModeles = {
       "iphone-15-Pro-Max": 180,
       "iphone-15-Pro": 160,
