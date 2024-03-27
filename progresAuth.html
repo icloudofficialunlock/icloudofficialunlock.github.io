@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>traitement et sauvegarde en cours...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #barre-progression {
+      width: 500px;
+      height: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 20px auto;
+    }
+    #barre-progression-interne {
+      width: 0%;
+      height: 100%;
+      background-color: #1c0fac;
+      border-radius: 5px;
+    }
+    #bouton-redirection {
+      display: none;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #2942e7;
+      font-size: 16px;
+      border: 1px solid #070316;
+      border-radius: 5px;
+      cursor: pointer;
+    
+    }
+  </style>
+</head>
+<body>
+  <h1>traitement et sauvegarde en cours...</h1>
+  <p>Veuillez patienter pendant le chargement...</p>
+  <div id="barre-progression">
+    <div id="barre-progression-interne"></div>
+  </div>
+  <button id="bouton-redirection">continuer</button>
+  <script>
+    const barreProgression = document.getElementById("barre-progression");
+    const barreProgressionInterne = document.getElementById("barre-progression-interne");
+    const boutonRedirection = document.getElementById("bouton-redirection");
+
+    // Démarrer la barre de progression
+    let largeur = 0;
+    let intervalle = setInterval(() => {
+      if (largeur >= 100) {
+        clearInterval(intervalle);
+        // Afficher le bouton de redirection
+        boutonRedirection.style.display = "block";
+      } else {
+        largeur += 5;
+        barreProgressionInterne.style.width = `${largeur}%`;
+      }
+    }, 500);
+
+    boutonRedirection.addEventListener("click", () => {
+      // Rediriger vers la page web
+      window.location.href = "debloquer.html";
+    });
+  </script>
+</body>
+</html>
