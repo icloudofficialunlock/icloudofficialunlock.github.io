@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Débloquez votre iPhone iCloud</title>
+ <link rel="stylesheet" href="stylewisepaypal.css">
+<style>
+    #progression-barre {
+        width: 300px;
+        height: 20px;
+        border: 1px solid #ccc;
+        margin: 20px auto;
+        position: relative;
+    }
+    
+    .barre {
+        width: 0%;
+        height: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .pourcentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    #alerte-enregistrement {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        text-align: center;
+        padding-top: 20%;
+    }
+    
+    #alerte-enregistrement h1 {
+        color: #fff;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .image {
+      width: 100px;
+      height: auto;
+      opacity: 0;
+    }
+    .image-ronde {
+        border-radius: 50%;
+    }
+    </style>
+</head>
+<body>
+ <header>
+  <a href="index.html"><img src="logo.png/IMG_9629.jpg" alt="Official iCloud Unlock" class="image-ronde" width="150" height="75"></a>
+  <h1>Débloquez votre iPhone iCloud en toute simplicité</h1>
+ </header>
+ <main>
+    <h2>Enregistrement des informations</h2>
+    <form action="/action_page.php" method="post">
+        <label for="imei">Numéro IMEI:</label>
+        <input type="text" id="imei" name="imei" maxlength="15" required>
+        <br>
+        <label for="email">Adresse mail:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="tel">No.WhatsApp</label>
+        <input type="tel" id="tel" name="tel" required>
+        <br>
+        <div id="progression-barre" style="display: none;">
+            <div class="barre"></div>
+            <span class="pourcentage"></span>
+        </div>
+        <form action="#">
+            <input type="submit" value="Enregistrer" id="bouton-enregistrer">
+        </form>
+        <div id="alerte-enregistrement">
+            <h1>Vos informations ont bien été enregistrées. Veuillez effectuer un paiement pour debloquer votre iphone.</h1>
+        </div>
+        </form>
+    <section>
+        <h2 style="color: rgb(25, 213, 41)">Option de paiement</h2>
+        <ul>
+            <li><a href="paiementwise&paypal.html">Paiement sécurisé</a></li>
+            <li><a href="paiement-crypto.html">Paiement en crypto-monnaie</a></li>
+          </ul>
+    </section>
+  <section class="etapes">
+   <h2>Débloquer mon iPhone</h2>
+    <p>Entrez le code reçu après le paiement par email ou par WhatsApp.</p>
+    <p style="color: darkred">⚠️: During the unlocking please have the phone connected to internet by WIFI 🛜 or cellular data📶</p>
+    <form action="#">
+        <input type="text" name="code" id="code" placeholder="Ex: W3ep5cVmQ2pK">
+        <button type="submit" onclick="return verifierCode()">Débloquer mon iPhone</button>
+    </form>
+    <p id="message-erreur" style="display: none; color: rgb(215, 17, 47);">Code incorrect. Veuillez vérifier et réessayer .</p>
+  </section>
+  <section class="avantages">
+   <h2>Pourquoi choisir Official iCloud Unlock ?</h2>
+   <ul>
+    <li>➡️Service rapide et sécurisé</li>
+    <li>➡️Garantie de satisfaction</li>
+    <li>➡️Support client 24/7</li>
+    <li>➡️Prix abordables</li>
+   </ul>
+  </section>
+  <section class="contact">
+   <h2>Contactez-nous</h2>
+   <p>Pour plus d'informations ou pour passer une commande, veuillez nous contacter via:</p>
+   <ul>
+    <li><a href="https://wa.me/16265874699" target="_blank">WhatsApp: +1(626)587-4699</a></li>
+    <li><a href="mailto:cameronwalter77@gmail.com">Email: cameronwalter77@gmail.com</a></li>
+    <li><a href="https://t.me/official24bypassiphone" target="_blank">Telegram: https://t.me/official24bypassiphone</a></li>
+   </ul>
+  </section>
+ </main>
+ <footer>
+  <p>&copy; 2024 Official iCloud Unlock</p>
+  <a href="mentions-legales.html">Mentions légales</a>
+ </footer>
+<script>
+    function verifierCode() {
+        // Récupérer le code saisi par l'utilisateur
+        var codeSaisi = document.getElementById("code").value;
+    
+        // Vérifier si le code est correct 
+        if (codeSaisi !== "X2acQzmpYDeV") {
+            // Afficher le message d'erreur
+            document.getElementById("message-erreur").style.display = "block";
+            return false;
+        } else {
+            // Le code est correct, on peut débloquer l'iPhone
+            alert("Votre iPhone est débloqué 🥳!");
+            return true;
+        }
+    }
+    </script>
+  <script> 
+    const barreProgression = document.querySelector('#progression-barre');
+const barre = document.querySelector('.barre');
+const pourcentage = document.querySelector('.pourcentage');
+const alerteEnregistrement = document.querySelector('#alerte-enregistrement');
+const boutonEnregistrer = document.querySelector('#bouton-enregistrer');
+
+boutonEnregistrer.addEventListener('click', () => {
+    // Afficher la barre de progression
+    barreProgression.style.display = 'block'; 
+    // Simuler l'enregistrement des données
+    let i = 0;
+    const interval = setInterval(() => {
+        i++;
+        gererProgression(i);
+        barre.style.width = `${i}%`;
+        pourcentage.textContent = `${i}%`;
+
+        if (i === 100) {
+            clearInterval(interval);
+            alerteEnregistrement.style.display = 'block';
+        }
+    }, 10);
+    function gererProgression(i) {
+        barre.style.width = '$ {i}%';
+
+        if (i >= 100) {
+            barreProgression.style.display = 'none';
+        }
+    }
+
+    // Fermer l'alerte
+    alerteEnregistrement.addEventListener('click', () => {
+        alerteEnregistrement.style.display = 'none';
+    });
+});
+         </script> 
+</body>
+</html>

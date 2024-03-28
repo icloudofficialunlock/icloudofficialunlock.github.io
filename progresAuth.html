@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemple de barre de progression</title>
+  <style>
+     body {
+      font-family: sans-serif;
+      text-align: center;
+    }
+    
+    #barre-progression {
+      width: 500px;
+      height: 20px;
+      border: 1px solid #ccc;
+      background-color: #ddd;
+      margin: 20px auto;
+    }
+    
+    .barre {
+      width: 0%;
+      height: 100%;
+      background-color: #0c26c9;
+    }
+    
+    #bouton-redirection {
+      display: none;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #2942e7;
+      font-size: 16px;
+      border: 1px solid #070316;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enregistrement et traitement.</h1>
+  <p id="message" style="color: rgb(25, 213, 41)">Veuillez patienter pendant le chargement.</p>
+  <div id="barre-progression">
+    <div class="barre"></div>
+  </div>
+  <button id="bouton-redirection">continuer</button>
+  <script>
+    const barreProgression = document.querySelector('#barre-progression');
+    const barre = document.querySelector('.barre');
+    const message = document.querySelector('#message');
+    const boutonRedirection = document.getElementById("bouton-redirection");
+
+    const barreProgressionMax = 100;
+    
+    const messageH1Defaut = "Chargement en cours...";
+    const messagePDefaut = "Veuillez patienter pendant le chargement...";
+    const messageH1Remplacement = "Chargement terminé !";
+    const messagePRemplacement = "cliquez sur continuer.";
+    
+    message.textContent = messagePDefaut;
+    
+    // Démarrer la progression de la barre de chargement
+    let valeurActuelle = 0;
+    const interval = setInterval(() => {
+      valeurActuelle++;
+      gererProgression(valeurActuelle);
+      
+      if (valeurActuelle >= barreProgressionMax) {
+        clearInterval(interval);
+      }  
+    }, 60);
+    
+    function gererProgression(valeurActuelle) {
+      barre.style.width = `${valeurActuelle}%`;
+      
+      if (valeurActuelle >= barreProgressionMax) {
+        barreProgression.style.display = 'none';
+
+         // Afficher le bouton de redirection
+       boutonRedirection.style.display = "block";
+        
+        message.textContent = messagePRemplacement;
+      }
+
+      boutonRedirection.addEventListener("click", () => {
+      // Rediriger vers la page web
+      window.location.href = "debloquer.html";
+    });
+    }
+  </script>
+</body>
+</html>
